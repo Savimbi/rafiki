@@ -35,9 +35,6 @@ class Book(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     qr_code = models.ImageField(upload_to="qr_codes", blank=True, null=True)
     
-    class Meta:
-        # Specify the custom table name
-        db_table = 'books.book'
         
     def __str__(self) -> str:
         return str(self.title)

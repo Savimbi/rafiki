@@ -1,4 +1,6 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+from customers.models import Customer
 
 def home_view(request):
-    return HttpResponse("<h1>Welcome here</h1")
+    qs = Customer.objects.all()
+    return render(request,"main.html",{'qs':qs})

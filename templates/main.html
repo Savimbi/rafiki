@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title%}
+Home
+{% endblock title%}
+
+{% block content %} 
+
+{% if qs %}
+<ul>
+    {% for item in qs%}
+    <li>
+        {{item.first_name}}
+    </li>
+   {% endfor %}
+</ul>
+{% else %}
+{% endif%}
+{% endblock content%}

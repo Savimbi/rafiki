@@ -44,9 +44,17 @@ INSTALLED_APPS = [
     'publishers',
     'rentals',
     'django_countries',
+    'tailwind',
+    'theme',
+    'django_browser_reload',
+    ]
+TAILWIND_APP_NAME ='theme'
+INTERNAL_IPS = [
+    '127.0.0.1'
 ]
 
 MIDDLEWARE = [
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -61,7 +69,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

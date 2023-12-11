@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title%} Books title list{% endblock title%}
+{% block content%} 
+<h1> Book title list </h1>
+ {% if qs%}
+<ul class="list-none hover:list-disc">
+ {% for item in qs%}
+    <li> {{item.title}}</li>
+ {% endfor%}
+</ul>
+ {% endif%}
+{% endblock content%}
